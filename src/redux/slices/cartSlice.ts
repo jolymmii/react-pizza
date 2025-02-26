@@ -45,6 +45,7 @@ const cartSlice = createSlice({
 		removeItem(state, action: PayloadAction<string>) {
 			// Для action.payload это строка (id)
 			state.items = state.items.filter(obj => obj.id !== action.payload)
+			state.totalPrice = calcTotalPrice(state.items)
 		},
 		clearItems(state) {
 			state.items = []

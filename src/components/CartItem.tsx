@@ -40,8 +40,6 @@ const CartItem: React.FC<CartProps> = ({
 			})
 		)
 	}
-	console.log('Type:', type) // Проверка значения type
-	console.log('Available types:', typeName)
 	const onClickMinus = () => {
 		dispatch(minusItem(id))
 	}
