@@ -49,7 +49,9 @@ body {
 			grid-template-columns: repeat(1, 1fr);
 		}
 	}
-
+	&__image {
+		width: 400px;
+	}
 	&__top {
 		display: flex;
 		align-items: center;
@@ -89,6 +91,14 @@ body {
 }
 
 .container {
+	&__text {
+		font-size: 20px;
+		font-weight: 700;
+		margin-top: 20px;
+	}
+	&__button__full {
+		align-items: center;
+	}
 	width: $container-width;
 	margin: 0 auto;
 
