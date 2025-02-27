@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './App.css'
 import MainLayout from './layouts/MainLayout'
 import Home from './pages/Home'
@@ -16,14 +16,18 @@ const NotFound = React.lazy(
 
 function App() {
 	return (
-		<Routes>
-			<Route path='/' element={<MainLayout />}>
-				<Route path='' element={<Home />} />
-				<Route path='*' element={<NotFound />} />
-				<Route path='cart' element={<Cart />} />
-				<Route path='pizza/:id' element={<FullPizzas />} />
-			</Route>
-		</Routes>
+		<BrowserRouter basename='/react-pizza'>
+			{' '}
+			{/* Здесь добавляем basename */}
+			<Routes>
+				<Route path='/' element={<MainLayout />}>
+					<Route path='' element={<Home />} />
+					<Route path='*' element={<NotFound />} />
+					<Route path='cart' element={<Cart />} />
+					<Route path='pizza/:id' element={<FullPizzas />} />
+				</Route>
+			</Routes>
+		</BrowserRouter>
 	)
 }
 
