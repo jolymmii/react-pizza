@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, Routes } from 'react-router-dom' // Удаляем HashRouter
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import MainLayout from './layouts/MainLayout'
 import Home from './pages/Home'
@@ -19,7 +19,7 @@ function App() {
 	return (
 		<Routes>
 			<Route path='/' element={<MainLayout />}>
-				<Route path='' element={<Home />} />
+				<Route index element={<Home />} />
 				<Route path='cart' element={<Cart />} />
 				<Route path='pizza/:id' element={<FullPizzas />} />
 				<Route path='*' element={<NotFound />} />
